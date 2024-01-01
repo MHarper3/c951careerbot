@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+  <category>
+    <pattern>*</pattern>
+    <template>
+        Hmmm...I'm not sure about that.  Try asking me "What career should I chose?
+        </template>
+  </category>
+  
+  <category>
+    <pattern>HI</pattern>
+    <template>
+        Hello! I am here to help you decide which career path to take after
+        graduating with a degree in computer science. Start by asking
+        "What career should I choose?"
+    </template>
+  </category>
+  
+  <category>
+      <pattern>HELLO</pattern>
+      <template><srai>HI</srai></template>
+  </category>
+  
+  <category>
+      <pattern>WHAT CAREER SHOULD I CHOOSE</pattern>
+      <template>
+          <think><set name="topic">QUESTION1</set></think>
+          Good question! Picking a career after graduating can be a daunting
+          task.  I will ask you a few questions to determine what might be a
+          good fit for you. First question: Would you prefer a job that consists
+          of mostly programming on a day to day basis?
+        </template>
+  </category>
+  
+    <topic name="QUESTION1">
+      
+        <category>
+            <pattern>*</pattern>
+            <template>
+              Please answer yes or no.
+            </template>
+        </category>
+      
+        <category>
+            <pattern>YES</pattern>
+            <template>
+              <think><set name="topic">QUESTION2A</set></think>
+              Great! We're already narrowing it down! Question 2: Do you enjoy
+              finding trends and patterns in datasets?
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Y</pattern>
+            <template><srai>YES</srai></template>
+        </category>
+        
+        <category>
+            <pattern>NO</pattern>
+            <template>
+              <think><set name="topic">QUESTION2B</set></think>
+              Great! We're already narrowing it down! Question 2: Do you enjoy
+              working with physical networks?
+            </template>
+        </category>
+        
+        <category>
+            <pattern>N</pattern>
+            <template><srai>NO</srai></template>
+        </category>
+      
+    </topic>
+  
+    <topic name="QuESTION2A">
+        
+        <category>
+            <pattern>*</pattern>
+            <template>
+              Please answer yes or no.
+            </template>
+        </category>
+        
+        <category>
+            <pattern>YES</pattern>
+            <template>
+              <think><set name="topic">*</set></think>
+              Got it! Sounds like you'd be a good fit for a data scientist role.
+              <br/><br/>
+              According to Coursera,
+              "Data scientists determine the questions their team should be 
+              asking and figure out how to answer those questions using data. 
+              They often develop predictive models for theorizing and forecasting."
+              <br/><br/>
+              <link>
+                  <text>For more information about this career path, click here.</text>
+                  <url>https://www.coursera.org/articles/what-is-a-data-scientist</url>
+              </link>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Y</pattern>
+            <template><srai>YES</srai></template>
+        </category>
+        
+        <category>
+            <pattern>NO</pattern>
+            <template>
+              <think><set name="topic">*</set></think>
+              Got it! Sounds like you'd be a good fit for a game developer role.
+              <br/><br/>
+              According to Coursera, 
+              "Video game developers help transform games from a concept to a playable 
+              reality. They do this by coding visual elements, programming features, 
+              and testing iterations until a game is ready for market. If you love 
+              video games and enjoy working with computers, a career in video game 
+              development can be immensely rewarding."
+              <br/><br/>
+              <link>
+                  <text>For more information about this career path, click here.</text>
+                  <url>https://www.coursera.org/articles/game-developer</url>
+              </link>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>N</pattern>
+            <template><srai>NO</srai></template>
+        </category>
+        
+    </topic>
+    
+    <topic name="QuESTION2B">
+      
+        <category>
+            <pattern>*</pattern>
+            <template>
+              Please answer yes or no.
+            </template>
+        </category>
+      
+        <category>
+            <pattern>YES</pattern>
+            <template>
+              <think><set name="topic">QUESTION3</set></think>
+              Just one more question!  Do you prefer 1) keeping existing networks
+              and systems secure or 2) designing, installing, and maintaining 
+              networks?
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Y</pattern>
+            <template><srai>YES</srai></template>
+        </category>
+        
+        <category>
+            <pattern>NO</pattern>
+            <template>
+              <think><set name="topic">*</set></think>
+              Got it! Sounds like you'd be a good fit for a cloud engineer role.
+              <br/><br/>
+              According to Coursera,
+              "A cloud engineer is an IT professional that builds and maintains 
+              cloud infrastructure. Cloud engineers can have more specific roles 
+              that include cloud architecting (designing cloud solutions for organizations), 
+              development (coding for the cloud), and administration (working with cloud networks)." 
+              <br/><br/>
+              <link>
+                  <text>For more information about this career path, click here.</text>
+                  <url>https://www.coursera.org/articles/what-is-a-cloud-engineer</url>
+              </link>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>N</pattern>
+            <template><srai>NO</srai></template>
+        </category>
+      
+    </topic>
+    
+    <topic name="QUESTION3">
+        
+        <category>
+            <pattern>*</pattern>
+            <template>
+              Please answer 1 or 2.
+            </template>
+        </category>
+        
+        <category>
+            <pattern>1</pattern>
+            <template>
+              <think><set name="topic">*</set></think>
+              Got it! Sounds like you'd be a good fit for an information security
+              analyst role.
+              <br/><br/>
+              According to Coursera, 
+              "The twenty-first century has already seen large information breaches 
+              at big companies in which sensitive data—including the credit card numbers, 
+              passwords, and social security numbers of hundreds of millions of users—were 
+              compromised. Information security analysts work to protect organizations 
+              from similar threats, preventing data hacks and breaches."
+              <br/><br/>
+              <link>
+                  <text>For more information about this career path, click here.</text>
+                  <url>https://www.coursera.org/articles/information-security-analysts-what-they-do</url>
+              </link>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>2</pattern>
+            <template>
+              <think><set name="topic">*</set></think>
+              Got it! Sounds like you'd be a good fit for a network administrator
+              role.
+              <br/><br/>
+              According to Coursera, 
+              "A network administrator is an IT professional who ensures that an 
+              organization’s computer networks—groups of computers that share 
+              information with one another—are operating to meet the needs of the 
+              organization. They can maintain and troubleshoot computer networks, 
+              and employ security principles to keep networks secure."
+              <br/><br/>
+              <link>
+                  <text>For more information about this career path, click here.</text>
+                  <url>https://www.coursera.org/articles/what-is-a-network-administrator-a-career-guide</url>
+              </link>
+            </template>
+        </category>
+        
+    </topic>
+    
+    
+  
+</aiml>
